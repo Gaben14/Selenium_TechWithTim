@@ -7,14 +7,13 @@ from selenium.webdriver.common.keys import Keys
 # Gives us access to the Enter, Esc, Delete and other keys... Use Keys.Return for enter
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 
+# Updated solution of implementing the WebDriver call.
 ser = Service(r"C:\Selenium\chromedriver.exe")
 op = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=ser, options=op)
 
 driver.get("https://www.techwithtim.net")
-print(driver.title)
 
 # ================ Search Bar with sleep and explicit wait ================
 # search_bar = driver.find_element_by_name("s")
@@ -32,8 +31,8 @@ try:
         EC.presence_of_element_located((By.ID, "main"))
     )
 
-    # print(main)
-    # Use the * before the By. -> This asterisk is a standard Python thing that will expand tuples into positional arguments that can be passed into methods.
+    # Use the * before the By. -> This asterisk is a standard Python thing that will expand tuples into positional
+    # arguments that can be passed into methods.
     articles = main.find_elements(*(By.TAG_NAME, "article"))
     for article in articles:
         header = article.find_element(*(By.CLASS_NAME, "entry-summary"))

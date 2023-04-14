@@ -1,0 +1,1 @@
+This project is about completing the https://www.youtube.com/playlist?list=PLzMcBGfZo4-n40rB1XaJ0ak1bemvlqumQ tutorial from Tech with Tim.
