@@ -19,6 +19,7 @@ driver.get("https://www.techwithtim.net")
 # search_bar = driver.find_element_by_name("s")
 search_bar = driver.find_element(By.NAME, "s")
 # HTML name attribute should be unique the same way as IDs
+search_bar.clear()
 search_bar.send_keys("test" + Keys.RETURN)
 # Instead using separate send_keys - I combined them.
 # search_bar.send_keys(Keys.RETURN)  # Hit the Enter/Return button
@@ -33,9 +34,9 @@ try:
 
     # Use the * before the By. -> This asterisk is a standard Python thing that will expand tuples into positional
     # arguments that can be passed into methods.
-    articles = main.find_elements(*(By.TAG_NAME, "article"))
+    articles = main.find_elements(By.TAG_NAME, "article")
     for article in articles:
-        header = article.find_element(*(By.CLASS_NAME, "entry-summary"))
+        header = article.find_element(By.CLASS_NAME, "entry-summary")
 
         print(header.text)
 
